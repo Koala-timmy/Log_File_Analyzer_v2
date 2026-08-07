@@ -1,0 +1,74 @@
+# Login Log Analyzer (Python)
+
+## Overview
+This is a simple Python program that reads a login log file and analyzes user authentication attempts. It counts the number of successful and failed login attempts for each user and displays the results.
+
+## Features
+- Reads login data from a text file.
+- Detects failed login attempts.
+- Detects successful login attempts.
+- Counts failed logins per user.
+- Counts successful logins per user.
+- Stores results using Python dictionaries.
+- Handles missing log files using exception handling.
+
+## How It Works
+1. The program opens and reads the log file.
+2. Each log entry is split into individual fields.
+3. If the log entry represents a failed login, the corresponding user's failure count is incremented.
+4. If the log entry represents a successful login, the corresponding user's success count is incremented.
+5. After processing all log entries, the program displays the total failed and successful logins for each user.
+
+## Functions
+
+### `read_logs(file_path)`
+Reads the contents of the specified log file.
+
+**Responsibilities:**
+- Opens the log file.
+- Reads every line into a list.
+- Returns the list of log entries.
+- Handles `FileNotFoundError` if the file cannot be located.
+
+### `analyze_logs(logs, logins_failed, logins_passed)`
+Processes the log data and records login statistics.
+
+**Responsibilities:**
+- Parses each log entry.
+- Identifies successful and failed login events.
+- Updates dictionaries that track login counts.
+- Prints the final login statistics.
+
+## Example Log File
+
+```text
+12:30 FAILED USER Alice
+12:32 SUCCESS Alice
+12:35 FAILED USER Bob
+12:36 FAILED USER Alice
+12:40 SUCCESS Bob
+```
+
+## Example Output
+
+```text
+LOGINS FAILED: {'Alice': 2, 'Bob': 1}
+LOGINS PASSED: {'Alice': 1, 'Bob': 1}
+```
+
+## Requirements
+- Python 3.x
+- A text file named `login_log.txt` containing login records.
+
+## Skills Demonstrated
+- File handling
+- Exception handling
+- Functions
+- Dictionaries
+- Loops
+- Conditional statements
+- String manipulation
+- Basic log analysis
+
+## Author
+Created as a beginner Python project to practice file handling, log parsing, dictionary manipulation, and basic cybersecurity log analysis.

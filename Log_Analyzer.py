@@ -27,7 +27,7 @@ def analyze_logs(logs, logins_failed, logins_passed): # Process read data
             else:
                 logins_failed[failed_user] += 1
         
-        if split_log[1] == "SUCCESS": # Passed line: Increment successes by 1
+        elif split_log[1] == "SUCCESS": # Passed line: Increment successes by 1
             passed_user = split_log.split_log[3]
             
             if passed_user not in logins_passed:
